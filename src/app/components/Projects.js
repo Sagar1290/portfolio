@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Projects() {
 
     const projectObj = [
@@ -47,7 +45,7 @@ export default function Projects() {
                             className={`py-8 max-w-6xl md:basis-1/2 ${index % 2 === 0 ? 'md:flex md:flex-row' : 'md:flex md:flex-row-reverse'
                                 }`}
                         >
-                            <div className="max-w-6xl md:basis-1/2">
+                            <div className="max-w-6xl md:basis-1/2" data-aos={index % 2 == 0 ? "fade-up-right" : "fade-up-left"} data-aos-duration="1000">
                                 <a href={currElem.gitLink} className="relative block z-0">
                                     <div className="p-2 md:p-0 rounded-lg relative group">
                                         <img
@@ -62,7 +60,7 @@ export default function Projects() {
                                 </a>
                             </div>
 
-                            <div className="p-4 md:space-y-10 text-gray-800 dark:text-gray-300 md:basis-1/2">
+                            <div className="p-4 md:space-y-10 text-gray-800 dark:text-gray-300 md:basis-1/2" data-aos={index % 2 == 0 ? "fade-up-left" : "fade-up-right"} data-aos-duration="1000">
                                 <a href={currElem.liveLink} className="text-lg md:text-xl text-blue-500 dark:text-blue-300 hover:underline">LIVE</a>
                                 <span className="text-lg md:text-xl text-gray-600 dark:text-gray-400"> | </span>
                                 <a href={currElem.gitLink} className="text-lg md:text-xl text-blue-500 dark:text-blue-300 hover:underline">CODE</a>

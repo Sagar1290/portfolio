@@ -27,6 +27,9 @@ body {
     rgb(var(--background-start-rgb));
   overflow-x: hidden;
 }
+.text-sm-cost {
+  font-size: 0.775rem;
+}
 
 .skill-card {
   display: flex;

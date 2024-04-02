@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const SkillCard = (props) => {
     return (
-        <div className='skill-card w-40 h-48 lg:w-48 lg:h-48 lg:m-auto hover:shadow-2xl'>
+        <div className='skill-card w-40 h-48 lg:w-48 lg:h-48 lg:m-auto hover:shadow-2xl' data-aos="zoom-in" >
             <div>
                 <Image
                     src={props.url}

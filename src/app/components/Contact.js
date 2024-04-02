@@ -1,20 +1,38 @@
+"use client"
+
 import React from 'react'
+import { useState } from 'react';
 
 const Contact = () => {
+
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: ""
+    });
+
+    const handleSubmit = async (e) => {
+        alert(`you are submitting details name=${name}, email=${email}, ${message}`);
+        e.preventDefault();
+    }
+    const handleChange = (e) => {
+        setFormData(`${e.target.name}: ${e.target.value}`);
+    }
+
     return (
         <div id="contact-main-div" className='md:w-1/3'>
-            <form class="flex flex-col px-8 py-8 dark:bg-gray-900">
+            <form class="flex flex-col px-8 py-8 dark:bg-gray-900" onSubmit={handleSubmit} autoComplete='on'>
 
                 <p class="text-center text-xl dark:text-gray-50">Send me a Message</p>
 
-                <label htmlFor="fullname" class="text-gray-500 font-light mt-4 dark:text-gray-50">Full name<span class="text-red-500 dark:text-gray-50">*</span></label>
-                <input type="text" name="fullname" class="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500" />
+                <label htmlFor="name" class="text-gray-500 font-light mt-4 dark:text-gray-50">Full name<span class="text-red-500 dark:text-gray-50">*</span></label>
+                <input type="text" id='name' name="name" onChange={handleChange} class="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500" />
 
                 <label htmlFor="email" class="text-gray-500 font-light mt-4 dark:text-gray-50">E-mail<span class="text-red-500 dark:text-gray-50">*</span></label>
-                <input type="email" name="email" class="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500" />
+                <input type="email" id='email' name="email" class="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500" />
 
                 <label htmlFor="message" class="text-gray-500 font-light mt-4 dark:text-gray-50">Message<span class="text-red-500 dark:text-gray-50">*</span></label>
-                <textarea name="message" class="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"></textarea>
+                <textarea name="message" id='message' class="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"></textarea>
                 <div class="flex flex-row items-center justify-start">
                     <button class="px-10 mt-8 py-2 bg-[#130F49] text-gray-50 font-light rounded-md text-lg flex flex-row items-center">
                         Send
