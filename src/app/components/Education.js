@@ -25,8 +25,9 @@ const Education = () => {
 
     return (
         <section className="flex flex-col lg:flex-row m-auto pb-20 lg:w-4/5">
-            {myObj.map((currElem) => (
+            {myObj.map((currElem, id) => (
                 <div
+                    key={id}
                     className="p-4 lg:px-10 m-1 flex flex-col md:flex-row gap-2 basis-1/2 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 "
                     data-aos="fade-up"
                     data-aos-duration="300"
