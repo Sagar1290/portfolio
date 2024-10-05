@@ -8,6 +8,7 @@ import Footer from './components/Footer'
 import AOS from "aos";
 import 'aos/dist/aos.css'
 import { useEffect } from 'react';
+import Experience from './components/Experience'
 
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
     <main>
       <MainDiv />
       <About />
+      <Experience />
       <Projects />
       <Footer />
     </main >
